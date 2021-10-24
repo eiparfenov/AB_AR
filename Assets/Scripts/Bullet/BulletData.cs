@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(menuName = "Custom/Bullet", fileName = "new bullet")]
 public class BulletData : ScriptableObject

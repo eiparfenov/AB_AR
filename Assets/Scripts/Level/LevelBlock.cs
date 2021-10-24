@@ -14,7 +14,6 @@ public class LevelBlock : MonoBehaviour
         {
             OnLevelBlockDie.Invoke(pointsForBlock);
             Destroy(gameObject);
-            print('1');
         }
     }
     private void OnDestroy()

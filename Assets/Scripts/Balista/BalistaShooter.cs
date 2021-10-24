@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class BalistaShooter : MonoBehaviour
 {
     [SerializeField] private float minShootDistance;
     public UnityEvent OnShootCompleted;
+    public UnityEvent<BulletBehaviourBase> OnShootStarted;
     public bool ShootAble(Vector3 bulletPosition)
     {
         bulletPosition = transform.localPosition - bulletPosition;
@@ -29,14 +31,29 @@ public class BalistaShooter : MonoBehaviour
             bullet.localPosition = Vector3.LerpUnclamped(start, end, progress * progress);
             yield return null;
         }
+        Shoot(bullet, bulletData, start, end);
+    }
+
+    private void Shoot(Transform bullet, BulletData bulletData, Vector3 start, Vector3 end)
+    {
+        BulletBehaviourBase bulletBehaviour = bullet.GetComponent<BulletBehaviourBase>();
+        OnShootStarted.Invoke(bulletBehaviour);
+
         GameObject bulletGameObject = bullet.gameObject;
+
         Rigidbody bulletRigidbody = bulletGameObject.AddComponent<Rigidbody>();
         bulletRigidbody.mass = bulletData.Mass;
         bulletRigidbody.AddForce(transform.TransformDirection(end - start) * bulletData.V0, ForceMode.VelocityChange);
         bulletRigidbody.useGravity = false;
-        bulletGameObject.AddComponent<BulletMainBehaviour>().Init(bulletData.G);
+
+        BulletMainBehaviour bulletMainBehaviour = bulletGameObject.AddComponent<BulletMainBehaviour>();
+        bulletMainBehaviour.Init(bulletData.G, 10f);
+        bulletMainBehaviour.OnBulletDestroy.AddListener(BulletDestroyHandler);
+
         bullet.parent = null;
-        yield return new WaitForSeconds(1f);
+    }
+    private void BulletDestroyHandler()
+    {
         OnShootCompleted.Invoke();
     }
 

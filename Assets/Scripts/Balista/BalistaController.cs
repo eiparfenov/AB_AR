@@ -9,6 +9,7 @@ public class BalistaController : MonoBehaviour
     private BalistaTraectoryPrediction balistaTraectoryPrediction;
     private BalistaBulletChoose balistaBulletChoose;
     private BalistaShooter balistaShooter;
+    private BulletBehaviourActivator bulletBehaviourActivator;
 
     private BulletData currentBullet;
 
@@ -18,6 +19,8 @@ public class BalistaController : MonoBehaviour
     {
         balistaShooter = GetComponentInChildren<BalistaShooter>();
         balistaShooter.OnShootCompleted.AddListener(ShootCompletedHandler);
+        balistaShooter.OnShootStarted.AddListener(ShootStartedHandler);
+
         balistaTraectoryPrediction = GetComponentInChildren<BalistaTraectoryPrediction>();
 
         currentBullet = bulletDatas[0];
@@ -26,6 +29,9 @@ public class BalistaController : MonoBehaviour
 
         balistaBulletChoose = FindObjectOfType<BalistaBulletChoose>();
         balistaBulletChoose.Init(bulletDatas);
+
+        bulletBehaviourActivator = FindObjectOfType<BulletBehaviourActivator>();
+        bulletBehaviourActivator.gameObject.SetActive(false);
     }
     private void BalistaBulletMoveHandler()
     {
@@ -44,6 +50,10 @@ public class BalistaController : MonoBehaviour
             SetBullet(balistaBulletChoose.NextBullet);
         else
             StartCoroutine(FinishLevel());
+    }
+    private void ShootStartedHandler(BulletBehaviourBase bulletBehaviour)
+    {
+        bulletBehaviourActivator.Activate(bulletBehaviour);
     }
     private void SetBullet(BulletData bulletData)
     {
