@@ -11,7 +11,9 @@ public class BulletData : ScriptableObject
     [SerializeField] private float mass;
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Sprite bulletSprite;
+    [SerializeField] private float damage;
 
+    public float Damage { get { return damage; } }
     public float V0 { get { return v0; } }
     public float G { get { return g; } }
     public float Mass { get { return mass; } }

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class BulletMainBehaviour : MonoBehaviour
 {
+    private float damage;
     private float g;
     private Rigidbody rb;
     private float lifeTime;
@@ -12,9 +13,11 @@ public class BulletMainBehaviour : MonoBehaviour
     public UnityEvent OnBulletDestroy = new UnityEvent();
     public float G { get { return g; } }
     public float LifeTime { get { return lifeTime; } }
+    public float Damage { get { return damage; } }
     
-    public void Init(float g, float lifeTime)
+    public void Init(float g, float lifeTime, float damage)
     {
+        this.damage = damage;
         this.g = g;
         this.lifeTime = lifeTime;
         StartCoroutine(DieAfterTime());
@@ -45,5 +48,22 @@ public class BulletMainBehaviour : MonoBehaviour
         if(InvokeOnDestroy)
             OnBulletDestroy.Invoke();
         OnBulletDestroy.RemoveAllListeners();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        LevelBlockDestroyable levelBlock = collision.collider.GetComponent<LevelBlockDestroyable>();
+        if (levelBlock)
+        {
+            levelBlock.Hit(collision.relativeVelocity.magnitude * damage);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        LevelBlockDestroyable levelBlock = collision.collider.GetComponent<LevelBlockDestroyable>();
+        if (levelBlock)
+        {
+            levelBlock.Hit(collision.relativeVelocity.magnitude * damage);
+        }
     }
 }

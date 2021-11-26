@@ -12,12 +12,12 @@ public class LevelBlock : MonoBehaviour
     {
         if(transform.localPosition.y < 0f) 
         {
-            OnLevelBlockDie.Invoke(pointsForBlock);
             Destroy(gameObject);
         }
     }
     private void OnDestroy()
     {
+        OnLevelBlockDie.Invoke(pointsForBlock);
         OnLevelBlockDie.RemoveAllListeners();
     }
 }

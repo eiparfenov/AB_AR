@@ -47,7 +47,7 @@ public class BalistaShooter : MonoBehaviour
         bulletRigidbody.useGravity = false;
 
         BulletMainBehaviour bulletMainBehaviour = bulletGameObject.AddComponent<BulletMainBehaviour>();
-        bulletMainBehaviour.Init(bulletData.G, 10f);
+        bulletMainBehaviour.Init(bulletData.G, 10f, bulletData.Damage);
         bulletMainBehaviour.OnBulletDestroy.AddListener(BulletDestroyHandler);
 
         bullet.parent = null;

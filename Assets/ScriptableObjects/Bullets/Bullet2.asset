@@ -17,3 +17,4 @@ MonoBehaviour:
   mass: 50
   bulletPref: {fileID: 1951285011091971524, guid: 88c9bc660e1183a45ab940d2e972234f, type: 3}
   bulletSprite: {fileID: 21300000, guid: a4a3df7637e265b49b834f5fc8eee0b3, type: 3}
+  damage: 1

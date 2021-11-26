@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9062589986133370188}
   - component: {fileID: 9113792565847821654}
   - component: {fileID: 6928598816945573159}
+  - component: {fileID: 3482411961442125013}
   m_Layer: 7
   m_Name: SimpleBlock
   m_TagString: Untagged
@@ -130,3 +131,17 @@ MonoBehaviour:
   OnLevelBlockDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3482411961442125013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737278027411944607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa41bb99d71752540b96df824b958c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterDie: {fileID: 3283905919067563207, guid: fdb7ee5fdb99bc14687c1b3c5ce7dcf3, type: 3}
+  maxHP: 10

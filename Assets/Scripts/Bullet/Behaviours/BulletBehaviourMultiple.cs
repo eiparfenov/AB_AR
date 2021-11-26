@@ -18,7 +18,7 @@ public class BulletBehaviourMultiple : BulletBehaviourBase
 
         BulletMainBehaviour bulletMainBehaviour = GetComponent<BulletMainBehaviour>();
         BulletMainBehaviour spawnedBulletMainBehaviour = spawned.GetComponent<BulletMainBehaviour>();
-        spawnedBulletMainBehaviour.Init(bulletMainBehaviour.G, bulletMainBehaviour.LifeTime);
+        spawnedBulletMainBehaviour.Init(bulletMainBehaviour.G, bulletMainBehaviour.LifeTime, bulletMainBehaviour.Damage);
         spawnedBulletMainBehaviour.InvokeOnDestroy = false;
 
         Rigidbody spawnedRb = spawned.GetComponent<Rigidbody>();
