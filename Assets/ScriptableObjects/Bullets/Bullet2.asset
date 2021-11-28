@@ -15,6 +15,6 @@ MonoBehaviour:
   v0: 8
   g: 2
   mass: 50
-  bulletPref: {fileID: 1951285011091971524, guid: 88c9bc660e1183a45ab940d2e972234f, type: 3}
-  bulletSprite: {fileID: 21300000, guid: a4a3df7637e265b49b834f5fc8eee0b3, type: 3}
+  bulletPref: {fileID: 7004343863493990412, guid: c7bcd9a79e2a9f44fae4949b854b92ef, type: 3}
+  bulletSprite: {fileID: 21300000, guid: 424a04766a051fe4c95f8c69f810513b, type: 3}
   damage: 1

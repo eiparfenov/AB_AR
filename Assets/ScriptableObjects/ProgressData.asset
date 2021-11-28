@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c67ca8e29d6b64abb52188f0f37f4c, type: 3}
+  m_Name: ProgressData
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 11400000, guid: b539eeece893da14b883f7c3ce9afb2b, type: 2}
+  - {fileID: 11400000, guid: bc29ab6b07887734ea7119cf0e72c45d, type: 2}
+  - {fileID: 11400000, guid: 534cc5aaf19c3c248a160971ab50cb2d, type: 2}
+  - {fileID: 11400000, guid: 61050e47bbe34e746af9822f5ef620f3, type: 2}
+  - {fileID: 11400000, guid: 275692bf28c6cfa4881a7dedc6ab7181, type: 2}
+  - {fileID: 11400000, guid: 9f63da71c468e054ba5c4d6daef8d4f3, type: 2}
+  - {fileID: 11400000, guid: 488e14d043902414f87ab953bd512b20, type: 2}
+  - {fileID: 11400000, guid: 14cfcaf5840406a46a629936b5fe96d0, type: 2}
+  - {fileID: 11400000, guid: 3c9b53ed81e8d3b409cde6b44a22b27b, type: 2}
+  - {fileID: 11400000, guid: e66924aee942bee4e95c39077369189e, type: 2}
+  - {fileID: 11400000, guid: 3cf1cec1011a5fb4fb0a7b2ef8a5ed30, type: 2}
+  - {fileID: 11400000, guid: c097ef771b880734d9762e1660ca3bb7, type: 2}
+  - {fileID: 11400000, guid: 351360f7460926c479cf3e9f21fb2ff3, type: 2}
+  - {fileID: 11400000, guid: fac2ee2f8a350be42b8a2719abc73fbe, type: 2}
+  - {fileID: 11400000, guid: 17fe50662ad9b9248b68bff9d67c6864, type: 2}
+  - {fileID: 11400000, guid: a53766978bacad74dbf7ed4416366f97, type: 2}
+  - {fileID: 11400000, guid: 2f93381ee788fd742ac526c00a104a8e, type: 2}
+  - {fileID: 11400000, guid: 8c8b2246a42b2b9469fd46ea8033d883, type: 2}
+  progressStars: 0300000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03000000
+  currentLevel: 17
+  gameStarted: 1

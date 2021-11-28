@@ -14,7 +14,9 @@ public class BulletBehaviourActivator : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        bulletBehaviour.ActivationHandler();
+        if(bulletBehaviour){
+            bulletBehaviour.ActivationHandler();
+        }
         gameObject.SetActive(false);
     }
 }

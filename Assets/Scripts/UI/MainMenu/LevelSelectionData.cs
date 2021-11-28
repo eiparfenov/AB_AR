@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSelectionData : MonoBehaviour
+public class LevelSelectionData : ScriptableObject
 {
     [SerializeField] private List<List<LevelData>> levels;
     public LevelData Level { get { return levels[currentSection][currentLevel]; } }
@@ -27,6 +27,7 @@ public class LevelSelectionData : MonoBehaviour
         this.currentLevel = currentLevel;
         this.currentSection = currentSection;
     }
+
     public void FinishLevel(int stars)
     {
         int currentStars = GetStars(currentSection, currentLevel);
@@ -40,6 +41,7 @@ public class LevelSelectionData : MonoBehaviour
         }
             
     }
+
     public int GetStars(int section, int level)
     {
         int currentStars;
