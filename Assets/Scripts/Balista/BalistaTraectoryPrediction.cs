@@ -31,7 +31,7 @@ public class BalistaTraectoryPrediction : MonoBehaviour
             float t = (i + 1f) * dt;
             traectoryPoints[i].transform.localPosition = v0 * t + g * t * t / 2f;
             traectoryPoints[i].SetActive(traectoryPoints[i].transform.position.z < 0);
-            traectoryPoints[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_Color", color);
+            traectoryPoints[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_BaseColor", color);
             traectoryPoints[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
         }
     }
