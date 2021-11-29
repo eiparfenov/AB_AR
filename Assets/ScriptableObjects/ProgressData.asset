@@ -31,6 +31,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a53766978bacad74dbf7ed4416366f97, type: 2}
   - {fileID: 11400000, guid: 2f93381ee788fd742ac526c00a104a8e, type: 2}
   - {fileID: 11400000, guid: 8c8b2246a42b2b9469fd46ea8033d883, type: 2}
-  progressStars: 0300000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03000000
-  currentLevel: 17
+  progressStars: 03000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  currentLevel: 0
   gameStarted: 1

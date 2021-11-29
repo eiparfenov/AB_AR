@@ -10,11 +10,15 @@ public class BalistaTraectoryPrediction : MonoBehaviour
     [SerializeField] private float dt;
     [SerializeField] private int c;
     private List<GameObject> traectoryPoints;
+    private Color color;
 
-    public void SetParams(float g, float v0)
+    public void SetParams(float g, float v0, Color color)
     {
         this.g = g;
         this.v0 = v0;
+        this.color = color;
+        // foreach (var point in traectoryPoints)
+        //     point.GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_Color", color);
     }
 
     public void DrawTraectory(Vector3 position)
@@ -27,6 +31,8 @@ public class BalistaTraectoryPrediction : MonoBehaviour
             float t = (i + 1f) * dt;
             traectoryPoints[i].transform.localPosition = v0 * t + g * t * t / 2f;
             traectoryPoints[i].SetActive(traectoryPoints[i].transform.position.z < 0);
+            traectoryPoints[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_Color", color);
+            traectoryPoints[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
         }
     }
     public void HidePoints()
@@ -36,6 +42,7 @@ public class BalistaTraectoryPrediction : MonoBehaviour
             point.gameObject.SetActive(false);
         }
     }
+
 
     private void Awake()
     {

@@ -59,10 +59,14 @@ public class BalistaController : MonoBehaviour
     {
         Vector3 spawningOffset = balistaTraectoryPrediction.transform.position;
         GameObject currentBullet = Instantiate(bulletData.BulletPref, spawningOffset, Quaternion.identity, balistaTraectoryPrediction.transform.parent);
+        currentBullet.transform.GetChild(0).GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_Color", bulletData.GetColor);
+        currentBullet.transform.GetChild(1).GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_Color", bulletData.GetColor);
+        currentBullet.transform.GetChild(0).GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_EmissionColor", bulletData.GetColor);
+        currentBullet.transform.GetChild(1).GetComponent<ParticleSystem>().GetComponent<Renderer>().material.SetColor("_EmissionColor", bulletData.GetColor);
         balistaBullet = currentBullet.AddComponent<BalistaBullet>();
         balistaBullet.OnBalistaBulletMove.AddListener(BalistaBulletMoveHandler);
         balistaBullet.OnBalistaBulletDrop.AddListener(BalistaBulletDropHandler);
-        balistaTraectoryPrediction.SetParams(bulletData.G, bulletData.V0);
+        balistaTraectoryPrediction.SetParams(bulletData.G, bulletData.V0, bulletData.GetColor);
         this.currentBullet = bulletData;
     }
     private void Update()

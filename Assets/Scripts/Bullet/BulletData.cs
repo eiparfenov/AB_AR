@@ -12,7 +12,9 @@ public class BulletData : ScriptableObject
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Sprite bulletSprite;
     [SerializeField] private float damage;
+    [SerializeField] private Color color;
 
+    public Color GetColor { get { return color; } }
     public float Damage { get { return damage; } }
     public float V0 { get { return v0; } }
     public float G { get { return g; } }
