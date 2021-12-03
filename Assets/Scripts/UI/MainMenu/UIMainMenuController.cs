@@ -39,7 +39,8 @@ public class UIMainMenuController : MonoBehaviour
     private void ExitButtonHandler()
     {
         progressData.Clear();
-        // UnityEditor.EditorApplication.isPlaying = false;
+        if(UnityEditor.EditorApplication.isPlaying)
+            UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
